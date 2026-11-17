@@ -1,0 +1,11 @@
+services:
+  planner:
+    build: .
+    container_name: planning-budget-ia
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - DATA_DIR=/app/data
+    restart: unless-stopped
